@@ -120,25 +120,25 @@ with st.sidebar:
     property_types = ["All"] + sorted(cleaned_df["property_type"].unique().tolist())
     selected_property_type = st.selectbox("Property Type", property_types)
 
-    price_min = float(cleaned_df["property_price"].min())
-    price_max = float(cleaned_df["property_price"].max())
+    price_min = int(cleaned_df["property_price"].min())
+    price_max = int(cleaned_df["property_price"].max())
     min_price, max_price = st.slider(
         "Price Range (₹)",
         min_value=price_min,
         max_value=price_max,
         value=(price_min, price_max),
-        step=max(10000.0, round((price_max - price_min) / 100)),
-        format="₹%.0f",
+        step=1000,
+        format="₹%d",
     )
 
-    area_min = float(cleaned_df["area_sqft"].min())
-    area_max = float(cleaned_df["area_sqft"].max())
+    area_min = int(cleaned_df["area_sqft"].min())
+    area_max = int(cleaned_df["area_sqft"].max())
     min_area, max_area = st.slider(
         "Area Range (sq.ft.)",
         min_value=area_min,
         max_value=area_max,
         value=(area_min, area_max),
-        step=10.0,
+        step=10,
     )
 
     dom_min = int(cleaned_df["days_on_market"].min())
