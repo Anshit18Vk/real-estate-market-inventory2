@@ -1,0 +1,17 @@
+Real Estate Market Inventory Map
+GTU B.Tech IT Mini Project
+
+Core concepts demonstrated:
+- Data Collection
+- Data Cleaning
+- Data Normalization
+- Exploratory Data Analysis
+- Statistical Analysis
+- Geographic Visualization
+- Interactive Dashboard
+- Data Filtering
+- Business Insights
+
+Run:
+    pip install -r requirements.txt
+    streamlit run app.py
